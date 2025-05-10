@@ -1,0 +1,22 @@
+// tsconfig.node.json
+{
+  "compilerOptions": {
+    "composite": true, // Necessary for project references
+    "skipLibCheck": true, // Speeds up type checking
+    "module": "ESNext", // Use modern modules, Vite handles CommonJS conversion if needed for Node context
+    "moduleResolution": "bundler", // Align with the main tsconfig for consistency
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules with no default export (often needed for Node modules)
+    "strict": true, // Maintain strict checks for config files too
+     /* Shadcn UI Path Aliases (optional but can be helpful if you import src files into vite.config) */
+     "baseUrl": ".",
+     "paths": {
+       "@/*": ["./src/*"]
+     }
+  },
+  "include": [
+    "vite.config.ts",
+    "postcss.config.js", // Include if you have one
+    "tailwind.config.js" // Include if you have one
+    // Add any other Node-specific config files here
+    ]
+}

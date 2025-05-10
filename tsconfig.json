@@ -1,0 +1,32 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020", // Use a modern ES target compatible with Vite
+    "useDefineForClassFields": true, // Standard for modern TS/JS
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Include standard browser and ES libs
+    "module": "ESNext", // Use modern module system for Vite/bundlers
+    "skipLibCheck": true, // Speeds up type checking by skipping d.ts files
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Recommended for Vite/modern bundlers
+    "allowImportingTsExtensions": true, // Required by Vite
+    "resolveJsonModule": true, // Allows importing .json files
+    "isolatedModules": true, // Ensures files can be processed independently (required by Vite/esbuild)
+    "noEmit": true, // Vite handles emitting JS files; tsc only performs type checking
+    "jsx": "react-jsx", // Use the modern React JSX transform
+
+    /* Linting */
+    "strict": true, // Enable all strict type-checking options (recommended)
+    "noUnusedLocals": true, // Report errors on unused local variables
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
+
+    /* Shadcn UI Path Aliases */
+    "baseUrl": ".", // Required for path aliases
+    "paths": {
+      "@/*": ["./src/*"] // Defines the '@/' alias to point to the 'src' directory
+    }
+  },
+  "include": ["src"], // Specifies that only files in 'src' should be type-checked by this config
+  "references": [{ "path": "./tsconfig.node.json" }] // Refers to the config for Node.js specific files (like vite.config.ts)
+}
