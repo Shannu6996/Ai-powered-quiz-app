@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FcAbout } from "react-icons/fc";
 // Import ThemeToggle from its dedicated file
 import ThemeToggle from './ThemeToggle';
 import { Button } from '@/components/ui/button';
@@ -13,7 +12,6 @@ const Header: React.FC = () => {
       <div className="container flex h-14 items-center mx-auto px-4">
         <Link to="/" className="mr-6 flex items-center space-x-2">
            {/* Example Logo Icon */}
-           <FcAbout />
           <span className="font-semibold sm:inline-block">AI Quiz App</span> {/* Hide text on very small screens if needed */}
         </Link>
 
