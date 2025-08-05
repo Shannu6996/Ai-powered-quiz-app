@@ -2,7 +2,8 @@ name: Quiz App CI Pipeline
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,3 +19,4 @@ jobs:
 
       - name: List files
         run: ls -la
+
