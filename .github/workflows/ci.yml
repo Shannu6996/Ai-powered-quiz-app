@@ -1,0 +1,20 @@
+name: Quiz App CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display directory
+        run: echo "Current directory: $PWD"
+
+      - name: List files
+        run: ls -la
