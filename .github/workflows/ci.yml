@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Display directory
-        run: echo "Current directory: $PWD"
+        run: |
+          echo "Current directory: $PWD"
 
       - name: List files
         run: ls -la
